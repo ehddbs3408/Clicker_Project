@@ -121,7 +121,7 @@ TextureImporter:
         height: 341.33334
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 80, y: 80, z: 80, w: 80}
+      border: {x: 120, y: 120, z: 120, w: 120}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -142,13 +142,34 @@ TextureImporter:
         height: 341.33334
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 100, y: 110, z: 100, w: 100}
+      border: {x: 100, y: 100, z: 100, w: 100}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: edd9cb8bb564ad620800000000000000
       internalID: 2799627478119521758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game_UI_Clicker_2
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 683
+        width: 341
+        height: 341
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 80, y: 80, z: 80, w: 80}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f721a1d0f803d62a0800000000000000
+      internalID: -6742679676145495425
       vertices: []
       indices: 
       edges: []
