@@ -1,0 +1,19 @@
+﻿{
+    "love": 0,
+    "statList": [
+        {
+            "name": "매력",
+            "imageNumber": 0,
+            "level": 0,
+            "price": 10,
+            "ePs": 1
+        },
+        {
+            "name": "매너",
+            "imageNumber": 0,
+            "level": 0,
+            "price": 10,
+            "ePs": 1
+        }
+    ]
+}
