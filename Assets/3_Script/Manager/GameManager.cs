@@ -7,6 +7,8 @@ public class GameManager : MonoSingleton<GameManager>
 {
     [SerializeField]
     private User user = null;
+    public User CurrentUser {get{return user;}}
+    public UIManager uIManager {get;private set;}
     private string SAVE_PATH = "";
     private readonly string SAVE_FILENAME = "/SaveFile.txt";
 
@@ -17,10 +19,10 @@ public class GameManager : MonoSingleton<GameManager>
         {
             Directory.CreateDirectory(SAVE_PATH);
         }
+        LoadFromJson();
+        uIManager = GetComponent<UIManager>();
 
         InvokeRepeating("SaveToJson",1f,60f);
-        InvokeRepeating("LoadToJson",0f,1f);
-
     }
     private void SaveToJson()
     {   
