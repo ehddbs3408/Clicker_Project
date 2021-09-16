@@ -17,6 +17,5 @@ public class UpgradePanel : MonoBehaviour
     private Button puchaseButton = null;
     [SerializeField]
     private Sprite[] statSprite = null;
-    private Stat stat = null; 
-    
+        
 }
