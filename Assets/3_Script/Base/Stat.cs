@@ -6,4 +6,5 @@ public class Stat
     public int level;
     public long price;
     public long ePs;
+    public int eCl;
 }

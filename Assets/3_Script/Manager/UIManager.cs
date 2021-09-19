@@ -9,17 +9,41 @@ public class UIManager : MonoBehaviour
     private Text loveText = null;
     [SerializeField]
     private UpgradePanel upgradePanelTemple = null;
+    private List<UpgradePanel> upgradePanelsList = new List<UpgradePanel>();
     void Start()
     {
         UpdateLovePanel();
+        CreatePanel();
+    }
+    public void CreatePanel()
+    {
+        GameObject panel = null;
+        UpgradePanel panelComponent = null;
+        foreach(Stat stat in GameManager.Instance.CurrentUser.statList)
+        {
+            panel = Instantiate(upgradePanelTemple.gameObject,upgradePanelTemple.transform.parent);
+            panelComponent = panel.GetComponent<UpgradePanel>();
+            panelComponent.SetValue(stat);
+            panel.SetActive(true);
+            upgradePanelsList.Add(panelComponent);
+        }
     }
     public void OnClickLove()
     {
-        GameManager.Instance.CurrentUser.love += 1;
+        GameManager.Instance.CurrentUser.love += EarnClickLove();
         UpdateLovePanel();
     }
     public void UpdateLovePanel()
     {
         loveText.text = string.Format("{0} 호감도",GameManager.Instance.CurrentUser.love);
+    }
+    private int EarnClickLove()
+    {
+        int clickLove = 0;
+        foreach(Stat stat in GameManager.Instance.CurrentUser.statList)
+        {
+            clickLove += stat.eCl * stat.level;
+        }
+        return clickLove;
     }
 }

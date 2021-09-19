@@ -12,6 +12,13 @@ public class GameManager : MonoSingleton<GameManager>
     private string SAVE_PATH = "";
     private readonly string SAVE_FILENAME = "/SaveFile.txt";
 
+    public void EarnLovePerSecond()
+    {
+        foreach(Stat stat in user.statList)
+        {
+            user.love = stat.ePs;
+        }
+    }
     private void Awake() 
     {
         SAVE_PATH = Application.dataPath + "/Save";

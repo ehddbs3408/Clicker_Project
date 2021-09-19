@@ -26,11 +26,11 @@ public class UpgradePanel : MonoBehaviour
     public void SetValue(Stat stat)
     {
         this.stat = stat;
-
+        UpdateUI();
     }
     public void UpdateUI()
     {
-        statImage.sprite = statSprite[stat.imageNumber];
+        //statImage.sprite = statSprite[stat.imageNumber];
         statnameText.text = stat.name;
         statlavelText.text = string.Format("Lv.{0}",stat.level);
         statpriceText.text = string.Format("{0}",stat.price);
