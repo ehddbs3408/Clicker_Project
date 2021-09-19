@@ -16,8 +16,9 @@ public class GameManager : MonoSingleton<GameManager>
     {
         foreach(Stat stat in user.statList)
         {
-            user.love = stat.ePs;
+            user.love += stat.ePs * stat.level;
         }
+        uIManager.UpdateLovePanel();
     }
     private void Awake() 
     {
@@ -30,6 +31,7 @@ public class GameManager : MonoSingleton<GameManager>
         uIManager = GetComponent<UIManager>();
 
         InvokeRepeating("SaveToJson",1f,60f);
+        InvokeRepeating("EarnLovePerSecond",0f,1f);
     }
     private void SaveToJson()
     {   
