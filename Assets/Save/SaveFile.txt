@@ -1,29 +1,22 @@
 ﻿{
-    "love": 458,
+    "love": 129,
     "statList": [
         {
             "name": "매력",
             "imageNumber": 0,
-            "level": 6,
-            "price": 1810,
-            "ePs": 1,
+            "level": 3,
+            "price": 23,
+            "ePs": 0,
             "eCl": 1
         },
         {
             "name": "매너",
             "imageNumber": 0,
             "level": 5,
-            "price": 1010,
-            "ePs": 1,
-            "eCl": 0
-        },
-        {
-            "name": "유노",
-            "imageNumber": 0,
-            "level": 5,
-            "price": 1010,
+            "price": 10,
             "ePs": 1,
             "eCl": 0
         }
-    ]
+    ],
+    "evevntList": []
 }

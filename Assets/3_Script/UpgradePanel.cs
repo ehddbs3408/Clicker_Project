@@ -20,8 +20,8 @@ public class UpgradePanel : MonoBehaviour
 
     private Stat stat = null;
 
-    private const int clickConst1=10;
-    private const int clickConst2=10;
+    private const int clickConst1=1;
+    private const int clickConst2=5;
 
     public void SetValue(Stat stat)
     {
@@ -41,7 +41,14 @@ public class UpgradePanel : MonoBehaviour
         GameManager.Instance.CurrentUser.love -= stat.price;
         Stat statInList = GameManager.Instance.CurrentUser.statList.Find((x)=> x.name == stat.name);
         statInList.level++;
-        statInList.price = (long)(Mathf.Pow(statInList.level,2)*(clickConst1*(statInList.level-1))+clickConst2);
+        if(statInList.eCl==1)
+        {
+            statInList.price = (long)(Mathf.Pow(statInList.level,2)*(clickConst1*(statInList.level-1))+clickConst2);
+        }
+        else
+        {
+            //statInList.price = (long)(
+        }
         UpdateUI();
         GameManager.Instance.uIManager.UpdateLovePanel();
 
