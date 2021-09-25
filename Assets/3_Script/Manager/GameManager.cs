@@ -8,7 +8,10 @@ public class GameManager : MonoSingleton<GameManager>
     [SerializeField]
     private User user = null;
     public User CurrentUser {get{return user;}}
+    
     public UIManager uIManager {get;private set;}
+    public PoolManager poolManager {get;private set;}
+
     private string SAVE_PATH = "";
     private readonly string SAVE_FILENAME = "/SaveFile.txt";
 
@@ -29,6 +32,7 @@ public class GameManager : MonoSingleton<GameManager>
         }
         LoadFromJson();
         uIManager = GetComponent<UIManager>();
+        poolManager = FindObjectOfType<PoolManager>();
 
         InvokeRepeating("SaveToJson",1f,60f);
         InvokeRepeating("EarnLovePerSecond",0f,1f);
@@ -57,5 +61,5 @@ public class GameManager : MonoSingleton<GameManager>
     private void OnApplicationQuit() {
         SaveToJson();
     }
-
+    
 }

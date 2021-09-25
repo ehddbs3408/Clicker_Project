@@ -14,6 +14,8 @@ public class UIManager : MonoBehaviour
     private EventPanel eventPanelTemple = null;
     [SerializeField]
     private GameObject UpdownPanel = null;
+    [SerializeField]
+    private GameObject lovePrefabTemple= null;
     private List<UpgradePanel> upgradePanelsList = new List<UpgradePanel>();
     private List<EventPanel> eventPanelsList = new List<EventPanel>();
     private int clickLoveAdd = 0;
@@ -53,8 +55,35 @@ public class UIManager : MonoBehaviour
     }
     public void OnClickLove()
     {
+        int i=0;
         GameManager.Instance.CurrentUser.love += EarnClickLove();
         UpdateLovePanel();
+
+        while(i<=2)
+        {
+            GameObject lovePrefab = null;
+            Vector2 dir =  Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            if(GameManager.Instance.poolManager.transform.childCount > 0)
+            {
+            
+                lovePrefab = GameManager.Instance.poolManager.transform.GetChild(0).gameObject;
+                lovePrefab.GetComponent<LoveClick>().Set();
+                lovePrefab.transform.position = dir;
+            }
+            else
+            {
+                Debug.Log("wfa");
+                lovePrefab = Instantiate(lovePrefabTemple,dir,Quaternion.identity);
+            }
+            if(lovePrefab != null)
+            {
+                lovePrefab.transform.SetParent(null);
+            }
+            lovePrefab.SetActive(true);
+            i++;
+        }
+        
+
     }
     public void OncliclUpDownPanel()
     {

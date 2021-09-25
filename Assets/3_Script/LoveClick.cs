@@ -21,21 +21,35 @@ public class LoveClick : MonoBehaviour
     private SpriteRenderer spriteRenderer = null;
 
     private void Start() {
+        Set();
+    }
+    
+    private void Update() {
+        transform.Translate(dir*speed*Time.deltaTime);
+        transform.localScale = Vector2.Lerp(transform.localScale,Vector2.zero,Time.deltaTime * sizeSpeed);
+        Color color = spriteRenderer.color;
+        color.a = Mathf.Lerp(color.a,10,Time.deltaTime*colorSpeed);
+        spriteRenderer.color = color;
+        if(gameObject.transform.position.x < -5f||gameObject.transform.position.x > 5f)
+        {
+            Despawn();
+        }
+        if(gameObject.transform.position.y < -8f||gameObject.transform.position.y > 8f)
+        {
+            Despawn();
+        }
+    }
+    public void Set()
+    {
         spriteRenderer = GetComponent<SpriteRenderer>();
         dir = new Vector2(Random.Range(10,-10),Random.Range(10,-10));
         float size = Random.Range(minsize,maxsize);
         transform.localScale = new Vector2(size,size);
         spriteRenderer.color = colors[Random.Range(0,colors.Length)];
     }
-    private void Update() {
-        transform.Translate(dir*speed*Time.deltaTime);
-        transform.localScale = Vector2.Lerp(transform.localScale,Vector2.zero,Time.deltaTime * sizeSpeed);
-        Color color = spriteRenderer.color;
-        color.a = Mathf.Lerp(color.a,0,Time.deltaTime*colorSpeed);
-        spriteRenderer.color = color;
-        if(spriteRenderer.color.a<= 0.01f)
-        {
-            Destroy(gameObject);
-        }
+    private void Despawn()
+    {
+        gameObject.transform.SetParent(GameManager.Instance.poolManager.transform);
+        gameObject.SetActive(false);
     }
 }

@@ -808,6 +808,7 @@ MonoBehaviour:
   upgradePanelTemple: {fileID: 1484405749}
   eventPanelTemple: {fileID: 1987086431}
   UpdownPanel: {fileID: 117016407}
+  lovePrefabTemple: {fileID: 5067318237527206748, guid: 780f1c97b8610254b918b7816453809a, type: 3}
 --- !u!1 &208659486
 GameObject:
   m_ObjectHideFlags: 0
@@ -3730,6 +3731,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1408072491}
   m_CullTransparentMesh: 1
+--- !u!1 &1472154572
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1472154574}
+  - component: {fileID: 1472154573}
+  m_Layer: 0
+  m_Name: PoolManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1472154573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472154572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d51c30732ac54f419c0fca425aa6553, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1472154574
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472154572}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1483899635
 GameObject:
   m_ObjectHideFlags: 0
