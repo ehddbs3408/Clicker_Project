@@ -1,11 +1,11 @@
 ﻿{
-    "love": 83,
+    "love": 65,
     "statList": [
         {
             "name": "매력",
             "imageNumber": 0,
-            "level": 1,
-            "price": 1,
+            "level": 3,
+            "price": 11,
             "ePs": 0,
             "eCl": 1
         },
@@ -42,5 +42,20 @@
             "eCl": 0
         }
     ],
-    "evevntList": []
+    "evevntList": [
+        {
+            "name": "우연",
+            "imageNumber": 0,
+            "price": 1000,
+            "eventId": 1,
+            "replay": false
+        },
+        {
+            "name": "만남",
+            "imageNumber": 0,
+            "price": 5000,
+            "eventId": 2,
+            "replay": false
+        }
+    ]
 }

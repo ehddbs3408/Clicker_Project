@@ -23,7 +23,7 @@ public class EventPanel : MonoBehaviour
 
     public void UpdateUI()
     {
-        eventImage.sprite = sprites[event_.imageNumber];
+        //eventImage.sprite = sprites[event_.imageNumber];
         eventNameText.text = event_.name;
         eventPriceText.text = string.Format("{0}",event_.price);
     }

@@ -15,12 +15,14 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private GameObject UpdownPanel = null;
     private List<UpgradePanel> upgradePanelsList = new List<UpgradePanel>();
+    private List<EventPanel> eventPanelsList = new List<EventPanel>();
     private int clickLoveAdd = 0;
     private bool isUpPanel = true;
     void Start()
     {
         UpdateLovePanel();
         CreateUpgradePanel();
+        CreateEventPanel();
     }
     private void CreateUpgradePanel()
     {
@@ -42,7 +44,10 @@ public class UIManager : MonoBehaviour
         foreach(Event evnet in GameManager.Instance.CurrentUser.evevntList)
         {
             panel = Instantiate(eventPanelTemple.gameObject,eventPanelTemple.transform.parent);
-            //panelComponent
+            panelComponent = panel.GetComponent<EventPanel>();
+            panelComponent.SetValue(evnet);
+            panel.SetActive(true);
+            eventPanelsList.Add(panelComponent);
         }
 
     }
