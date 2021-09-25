@@ -14,10 +14,7 @@ public class UpgradePanel : MonoBehaviour
     [SerializeField]
     private Text statpriceText = null;
     [SerializeField]
-    private Button puchaseButton = null;
-    [SerializeField]
     private Sprite[] statSprite = null;
-
     private Stat stat = null;
 
     private const int clickConst1=1;
@@ -43,7 +40,7 @@ public class UpgradePanel : MonoBehaviour
         statInList.level++;
         if(statInList.eCl==1)
         {
-            statInList.price = (long)(Mathf.Pow(statInList.level,2)*(clickConst1*(statInList.level-1))+clickConst2);
+            statInList.price = (long)(statInList.level*(clickConst1*(statInList.level-1))+clickConst2);
         }
         else
         {
@@ -51,6 +48,5 @@ public class UpgradePanel : MonoBehaviour
         }
         UpdateUI();
         GameManager.Instance.uIManager.UpdateLovePanel();
-
     }
 }

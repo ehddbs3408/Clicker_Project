@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class UIManager : MonoBehaviour
 {
@@ -9,14 +10,19 @@ public class UIManager : MonoBehaviour
     private Text loveText = null;
     [SerializeField]
     private UpgradePanel upgradePanelTemple = null;
+    [SerializeField]
+    private EventPanel eventPanelTemple = null;
+    [SerializeField]
+    private GameObject UpdownPanel = null;
     private List<UpgradePanel> upgradePanelsList = new List<UpgradePanel>();
     private int clickLoveAdd = 0;
+    private bool isUpPanel = true;
     void Start()
     {
         UpdateLovePanel();
-        CreatePanel();
+        CreateUpgradePanel();
     }
-    public void CreatePanel()
+    private void CreateUpgradePanel()
     {
         GameObject panel = null;
         UpgradePanel panelComponent = null;
@@ -29,14 +35,41 @@ public class UIManager : MonoBehaviour
             upgradePanelsList.Add(panelComponent);
         }
     }
+    private void CreateEventPanel()
+    {
+        GameObject panel = null;
+        EventPanel panelComponent = null;
+        foreach(Event evnet in GameManager.Instance.CurrentUser.evevntList)
+        {
+            panel = Instantiate(eventPanelTemple.gameObject,eventPanelTemple.transform.parent);
+            //panelComponent
+        }
+
+    }
     public void OnClickLove()
     {
         GameManager.Instance.CurrentUser.love += EarnClickLove();
         UpdateLovePanel();
     }
+    public void OncliclUpDownPanel()
+    {
+        
+        if(isUpPanel)
+        {
+            isUpPanel = false;
+            UpdownPanel.GetComponent<RectTransform>().DOAnchorPosY(UpdownPanel.GetComponent<RectTransform>().anchoredPosition.y-1200f,0.5f);
+            
+        }
+        else
+        {
+            isUpPanel = true;
+            UpdownPanel.GetComponent<RectTransform>().DOAnchorPosY(UpdownPanel.GetComponent<RectTransform>().anchoredPosition.y+1200f,0.5f);
+        }
+        
+    }
     public void UpdateLovePanel()
     {
-        loveText.text = string.Format("{0} 호감도",GameManager.Instance.CurrentUser.love);
+        loveText.text = string.Format("{0:###,###,###,###0} 호감도",GameManager.Instance.CurrentUser.love);
     }
     private int EarnClickLove()
     {
@@ -44,12 +77,31 @@ public class UIManager : MonoBehaviour
         
         foreach(Stat stat in GameManager.Instance.CurrentUser.statList)
         {
-            if(stat.level >= 10*clickLoveAdd)
+            while(stat.level >= 10*clickLoveAdd)
             {
                 clickLoveAdd++;
+                Debug.Log(clickLoveAdd);
             }
             clickLove += stat.eCl * clickLoveAdd * stat.level;
         }
         return clickLove;
     }
+    private IEnumerator MoveTo(GameObject a, Vector3 toPos)
+    {
+        float count = 0.4f;
+        Vector3 wasPos = a.transform.position;
+        while (true)
+        {
+            count += Time.deltaTime;
+            a.transform.position = Vector3.Lerp(wasPos, toPos, count);
+
+            if (count >= 1)
+            {
+                a.transform.position = toPos;
+                break;
+            }
+            yield return null;
+        }
+    }
+    
 }

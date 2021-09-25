@@ -1,18 +1,42 @@
 ﻿{
-    "love": 129,
+    "love": 83,
     "statList": [
         {
             "name": "매력",
             "imageNumber": 0,
-            "level": 3,
-            "price": 23,
+            "level": 1,
+            "price": 1,
             "ePs": 0,
             "eCl": 1
         },
         {
             "name": "매너",
             "imageNumber": 0,
-            "level": 5,
+            "level": 0,
+            "price": 10,
+            "ePs": 1,
+            "eCl": 0
+        },
+        {
+            "name": "유머",
+            "imageNumber": 0,
+            "level": 0,
+            "price": 10,
+            "ePs": 1,
+            "eCl": 0
+        },
+        {
+            "name": "멋짐",
+            "imageNumber": 0,
+            "level": 0,
+            "price": 10,
+            "ePs": 1,
+            "eCl": 0
+        },
+        {
+            "name": "귀여움",
+            "imageNumber": 0,
+            "level": 0,
             "price": 10,
             "ePs": 1,
             "eCl": 0

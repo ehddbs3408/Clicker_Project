@@ -1,9 +1,9 @@
 [System.Serializable]
 public class Event
 {
-    public string Name;
-    public int Image;
+    public string name;
+    public int imageNumber;
     public long price;
-    public int number;
+    public int eventId;
     public bool replay;
 }
