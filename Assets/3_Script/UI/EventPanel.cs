@@ -30,7 +30,10 @@ public class EventPanel : MonoBehaviour
 
     public void OnclickPurchase()
     {
-        
+        if(GameManager.Instance.CurrentUser.love < event_.price) return;
+        GameManager.Instance.CurrentUser.love -= event_.price;
+        event_.replay = true;
+        UpdateUI();
     }
 
 }

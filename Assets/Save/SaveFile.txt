@@ -1,5 +1,5 @@
 ﻿{
-    "love": 2990,
+    "love": 3551,
     "statList": [
         {
             "name": "매력",
