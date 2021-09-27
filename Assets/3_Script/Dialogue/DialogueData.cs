@@ -15,6 +15,7 @@ public class DialogueData : MonoSingleton<DialogueData>
     public DialogueGroup CurrentDialogueGroup {get{return dialogueGroup;}}
     public Text nameText;
     public Text dialogueText;
+    public Text[] choiceText;
     private Queue<string> sentences;
     void Start()
     {
@@ -40,9 +41,14 @@ public class DialogueData : MonoSingleton<DialogueData>
     {
         if(sentences.Count == 0)
         {
-            if(dialogueGroup.dialogueList[dialogueGroup.id].choiceId[0]!=0)
+            if(dialogueGroup.dialogueList[dialogueGroup.id].choice)
             {
                 choicePanel.SetActive(true);
+                for(int i =0;i<3;i++)
+                {
+                    choiceText[i].text = dialogueGroup.dialogueList[dialogueGroup.id].choiceSentences[i];
+                }
+                return;
             }
             
             
@@ -63,6 +69,7 @@ public class DialogueData : MonoSingleton<DialogueData>
     }
     void EndDialogue()
     {
+        GameManager.Instance.OnOffGameObJect();
         Debug.Log("End of conversation");
     }
 }

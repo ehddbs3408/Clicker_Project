@@ -353,7 +353,7 @@ GameObject:
   - component: {fileID: 122928905}
   - component: {fileID: 122928904}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: InGameCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -826,6 +826,8 @@ MonoBehaviour:
       price: 1100
       eventId: 2
       replay: 0
+  onGameObject: {fileID: 122928903}
+  offGameObject: {fileID: 558842298}
 --- !u!4 &189204041
 Transform:
   m_ObjectHideFlags: 0
@@ -873,18 +875,29 @@ MonoBehaviour:
   dialogueGroup:
     id: 0
     dialogueList:
-    - choiceId: 010000000200000003000000
+    - choice: 1
+      choiceId: 010000000200000003000000
       name: "\uC774\uC5EC\uC8FC"
       sentences:
       - "\uC5B4 \uC548\uB155 \uD558\uACE0 "
       - "\u3163\u3139\uBBD6\uD558\u3163\u3161\u3141\uC9C0\u314F\uD760\uC790\u3163\uD750"
-    - choiceId: 030000000100000002000000
+      choiceSentences:
+      - "\uC5B4.. \uC548\uB155?"
+      - "\uC5B4.? \uC608\uC058\uB2E4"
+      - "\uD639\uC2DC \uB3C8\uAE4C\uC2A4 \uC88B\uC544\uD558\uC138\uC694?"
+    - choice: 1
+      choiceId: 030000000100000002000000
       name: A
       sentences:
       - "\u3147\uBBF8;\u3148,\u3147;\u3163\uBBC0\uB9AC;\u3141\uC990;\u3163\uBBC8;\u3163\u3161\u3141\uB984\u3147\u3141\u3148\u3147\u3141\u3148\u3148\u3147\u3141\u3148\u3147\u3141\u3148\u3148\u3147\u3141\u3148\u3147\u3141\u3148\u3147\u3141\u3148\u3147\u3141\u3147"
       - "\u3147\uBBF8;\u3148,\u3147;\u3163\uBBC0\uB9AC;\u3141\uC990;\u3163\uBBC8;\u3163\u3161\u3141\uB984\u3147\u3141\u3148\u3147\u3141\u3148\u3148\u3147\u3141\u3148\u3147\u3141\u3148\u3148\u3147\u3141\u3148\u3147\u3141\u3148\u3147\u3141\u3148\u3147\u3141\u3147"
       - "\u3147\uBBF8;\u3148,\u3147;\u3163\uBBC0\u3141\u3148\u313B\u3148\u313B\u313B\u313B\u3148\u3148\u3147\u3141\u3148\u3147\u3148\u3141\u3147\u3148\u3141\u3147"
-    - choiceId: 020000000300000001000000
+      choiceSentences:
+      - "\uC544 \uADF8\uAC83\uC740 \uC544\uB2C8\uC9C0"
+      - "\uADF8\uAC70 \uB9DE\uC5B4?"
+      - "\uB09C \uC544\uB2C8\uB77C\uACE0 "
+    - choice: 1
+      choiceId: 020000000300000001000000
       name: B
       sentences:
       - 12312eqdwqdad
@@ -893,15 +906,37 @@ MonoBehaviour:
       - cwcccccccccccccccccc
       - aaaaaaaaaaaaaaaaaaa
       - bbbbbbbbbbbbbbbbbb
-    - choiceId: 010000000200000003000000
+      choiceSentences:
+      - "\uB098\uB791 \uC0AC\uADC8\uB798?"
+      - "\uC2EB\uC5B4 \uB2C8\uAC00\uBB54\uB370"
+      - "\uD5E4\uC73C\u3161"
+    - choice: 1
+      choiceId: 010000000200000004000000
       name: C
       sentences:
       - aaaaaaaaaaaaaaaaaa
       - bbbbbbbbbbbbbb
       - cccccccccccccc
       - dddddddddddddddd
+      choiceSentences:
+      - "\uBE68\uBC1C\uBC1C\uBC14\uB78D"
+      - "\u3134\uCCAE\uBBF8\u315C\uCE58\u314F\u3141\uC8FC\uCE58\u314F"
+      - "\uBBF8\u314F\u3148\u3147\uBBF8\uC7A5\uB9C8"
+    - choice: 0
+      choiceId: 
+      name: "\uAE40\uB0A8\uC8FC"
+      sentences:
+      - aaaaaaaaaaaaaaaaaa
+      - bbbbbbbbbbbbbb
+      - cccccccccccccc
+      - dddddddddddddddd
+      choiceSentences: []
   nameText: {fileID: 1960873478}
   dialogueText: {fileID: 1427569349}
+  choiceText:
+  - {fileID: 819501753}
+  - {fileID: 1202216363}
+  - {fileID: 1219209817}
 --- !u!1 &190411930
 GameObject:
   m_ObjectHideFlags: 0
@@ -2702,7 +2737,7 @@ GameObject:
   - component: {fileID: 558842300}
   - component: {fileID: 558842299}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: EventCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3006,7 +3041,7 @@ GameObject:
   - component: {fileID: 819501754}
   - component: {fileID: 819501753}
   m_Layer: 5
-  m_Name: Text
+  m_Name: ChoiceText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3052,12 +3087,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_Font: {fileID: 12800000, guid: 78523c9d03ea63842908b423126ba511, type: 3}
+    m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 5
-    m_MaxSize: 50
+    m_MinSize: 0
+    m_MaxSize: 100
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -4147,7 +4182,7 @@ GameObject:
   - component: {fileID: 1202216364}
   - component: {fileID: 1202216363}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Choice_1Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4193,12 +4228,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_Font: {fileID: 12800000, guid: 78523c9d03ea63842908b423126ba511, type: 3}
+    m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 5
-    m_MaxSize: 50
+    m_MinSize: 0
+    m_MaxSize: 100
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -4226,7 +4261,7 @@ GameObject:
   - component: {fileID: 1219209818}
   - component: {fileID: 1219209817}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Choice_2Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4272,12 +4307,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_Font: {fileID: 12800000, guid: 78523c9d03ea63842908b423126ba511, type: 3}
+    m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 5
-    m_MaxSize: 50
+    m_MinSize: 0
+    m_MaxSize: 100
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -4351,7 +4386,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 78523c9d03ea63842908b423126ba511, type: 3}
     m_FontSize: 70
     m_FontStyle: 0
     m_BestFit: 0
@@ -5298,7 +5333,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e7bc562f66b78184eb8eb1ef0e22e2fc, type: 3}
+    m_Font: {fileID: 12800000, guid: 78523c9d03ea63842908b423126ba511, type: 3}
     m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
@@ -7282,7 +7317,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 78523c9d03ea63842908b423126ba511, type: 3}
     m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0

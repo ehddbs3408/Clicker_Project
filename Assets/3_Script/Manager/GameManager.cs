@@ -14,6 +14,8 @@ public class GameManager : MonoSingleton<GameManager>
 
     private string SAVE_PATH = "";
     private readonly string SAVE_FILENAME = "/SaveFile.txt";
+    [SerializeField]
+    private GameObject onGameObject,offGameObject;
 
     public void EarnLovePerSecond()
     {
@@ -61,5 +63,9 @@ public class GameManager : MonoSingleton<GameManager>
     private void OnApplicationQuit() {
         SaveToJson();
     }
-    
+    public void OnOffGameObJect()
+    {
+        onGameObject.SetActive(true);
+        offGameObject.SetActive(false);
+    }
 }
