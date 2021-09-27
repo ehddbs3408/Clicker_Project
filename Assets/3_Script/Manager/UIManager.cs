@@ -16,10 +16,18 @@ public class UIManager : MonoBehaviour
     private GameObject updownPanel = null;
     [SerializeField]
     private GameObject lovePrefabTemple= null;
+    [SerializeField]
+    private GameObject randomDialoguePanel;
+    [SerializeField]
+    private Text randomDialogueText;
+    [SerializeField]
+    private RandomDialogue randomDialogue;
     private List<UpgradePanel> upgradePanelsList = new List<UpgradePanel>();
     private List<EventPanel> eventPanelsList = new List<EventPanel>();
     private int clickLoveAdd = 0;
     private bool isUpPanel = true;
+    private bool isTyping = true;
+    private int randomNumber;
     void Start()
     {
         
@@ -59,7 +67,8 @@ public class UIManager : MonoBehaviour
         int i=0;
         GameManager.Instance.CurrentUser.love += EarnClickLove();
         UpdateLovePanel();
-
+        if(isTyping)
+        RandomDialogue();
         while(i<=2)
         {
             GameObject lovePrefab = null;
@@ -121,21 +130,28 @@ public class UIManager : MonoBehaviour
         }
         return clickLove;
     }
-    private IEnumerator MoveTo(GameObject a, Vector3 toPos)
+    private void RandomDialogue()
     {
-        float count = 0.4f;
-        Vector3 wasPos = a.transform.position;
-        while (true)
+        randomNumber = Random.Range(0,10);
+        StartCoroutine(RandomDialogueWindow());
+        StartCoroutine(TypeSentence(randomDialogue.randomDialogue[randomNumber]));
+    }
+    private IEnumerator RandomDialogueWindow()
+    {
+        isTyping = false;
+        randomDialoguePanel.SetActive(true);
+        yield return new WaitForSeconds(5f);
+        randomDialoguePanel.SetActive(false);
+        yield return new WaitForSeconds(5f);
+        isTyping = true;
+    }
+    private IEnumerator TypeSentence(string sentence)
+    {
+        randomDialogueText.text = "";
+        foreach(char latter in sentence.ToCharArray())
         {
-            count += Time.deltaTime;
-            a.transform.position = Vector3.Lerp(wasPos, toPos, count);
-
-            if (count >= 1)
-            {
-                a.transform.position = toPos;
-                break;
-            }
-            yield return null;
+            randomDialogueText.text += latter;
+            yield return new WaitForSeconds(0.05f);
         }
     }
     public void OnClickQuit()
