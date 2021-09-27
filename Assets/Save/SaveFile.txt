@@ -1,5 +1,5 @@
 ﻿{
-    "love": 3551,
+    "love": 12,
     "statList": [
         {
             "name": "매력",
@@ -47,13 +47,13 @@
             "name": "우연",
             "imageNumber": 0,
             "price": 1000,
-            "eventId": 1,
+            "eventId": 1001,
             "replay": false
         },
         {
             "name": "만남",
             "imageNumber": 0,
-            "price": 5000,
+            "price": 1100,
             "eventId": 2,
             "replay": false
         }

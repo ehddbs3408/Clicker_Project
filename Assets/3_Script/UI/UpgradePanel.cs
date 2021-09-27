@@ -25,7 +25,7 @@ public class UpgradePanel : MonoBehaviour
         this.stat = stat;
         UpdateUI();
     }
-    public void UpdateUI()
+    private void UpdateUI()
     {
         //statImage.sprite = statSprite[stat.imageNumber];
         statnameText.text = stat.name;

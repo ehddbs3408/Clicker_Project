@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LoveClick : MonoBehaviour
 {
-    Vector2 dir;
+    Vector3 dir;
     [SerializeField]
     private float maxsize = 0.1f;
     [SerializeField]
@@ -42,7 +42,7 @@ public class LoveClick : MonoBehaviour
     public void Set()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        dir = new Vector2(Random.Range(10,-10),Random.Range(10,-10));
+        dir = new Vector3(Random.Range(10,-10),Random.Range(10,-10),-0.1f);
         float size = Random.Range(minsize,maxsize);
         transform.localScale = new Vector2(size,size);
         spriteRenderer.color = colors[Random.Range(0,colors.Length)];

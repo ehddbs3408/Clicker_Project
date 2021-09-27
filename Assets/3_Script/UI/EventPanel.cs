@@ -21,7 +21,7 @@ public class EventPanel : MonoBehaviour
         UpdateUI();
     }
 
-    public void UpdateUI()
+    private void UpdateUI()
     {
         //eventImage.sprite = sprites[event_.imageNumber];
         eventNameText.text = event_.name;
@@ -34,6 +34,12 @@ public class EventPanel : MonoBehaviour
         GameManager.Instance.CurrentUser.love -= event_.price;
         event_.replay = true;
         UpdateUI();
+        TriggerDialogue(event_.eventId);
+
+    }
+    private void TriggerDialogue(int id)
+    {
+        FindObjectOfType<DialogueData>().StartDialogue(id);
     }
 
 }

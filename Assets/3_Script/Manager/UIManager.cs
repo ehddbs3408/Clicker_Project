@@ -13,7 +13,7 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private EventPanel eventPanelTemple = null;
     [SerializeField]
-    private GameObject UpdownPanel = null;
+    private GameObject updownPanel = null;
     [SerializeField]
     private GameObject lovePrefabTemple= null;
     private List<UpgradePanel> upgradePanelsList = new List<UpgradePanel>();
@@ -22,6 +22,7 @@ public class UIManager : MonoBehaviour
     private bool isUpPanel = true;
     void Start()
     {
+        
         UpdateLovePanel();
         CreateUpgradePanel();
         CreateEventPanel();
@@ -87,17 +88,17 @@ public class UIManager : MonoBehaviour
     }
     public void OncliclUpDownPanel()
     {
-        
+        float upDownY = 1020;
         if(isUpPanel)
         {
             isUpPanel = false;
-            UpdownPanel.GetComponent<RectTransform>().DOAnchorPosY(UpdownPanel.GetComponent<RectTransform>().anchoredPosition.y-1200f,0.5f);
+            updownPanel.GetComponent<RectTransform>().DOAnchorPosY(updownPanel.GetComponent<RectTransform>().anchoredPosition.y-upDownY,0.5f);
             
         }
         else
         {
             isUpPanel = true;
-            UpdownPanel.GetComponent<RectTransform>().DOAnchorPosY(UpdownPanel.GetComponent<RectTransform>().anchoredPosition.y+1200f,0.5f);
+            updownPanel.GetComponent<RectTransform>().DOAnchorPosY(updownPanel.GetComponent<RectTransform>().anchoredPosition.y+upDownY,0.5f);
         }
         
     }
@@ -136,6 +137,11 @@ public class UIManager : MonoBehaviour
             }
             yield return null;
         }
+    }
+    public void OnClickQuit()
+    {
+        Application.Quit();
+        Debug.Log("Game Quit");
     }
     
 }
