@@ -358,7 +358,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &122928904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -819,7 +819,7 @@ MonoBehaviour:
     - name: "\uC6B0\uC5F0"
       imageNumber: 0
       price: 1000
-      eventId: 1001
+      eventId: 1
       replay: 0
     - name: "\uB9CC\uB0A8"
       imageNumber: 0
@@ -2692,7 +2692,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &558842299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4963,7 +4963,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1390899789}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1987086431}
+        m_TargetAssemblyTypeName: EventPanel, Assembly-CSharp
+        m_MethodName: OnclickPurchase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1390899789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7426,6 +7438,8 @@ MonoBehaviour:
   eventNameText: {fileID: 461864060}
   eventPriceText: {fileID: 399396154}
   sprites: []
+  onEventUi: {fileID: 558842298}
+  offInGameUi: {fileID: 122928903}
 --- !u!1 &2049064187
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,8 @@ public class EventPanel : MonoBehaviour
     private Text eventPriceText = null;
     [SerializeField]
     private Sprite[] sprites = null; 
+    [SerializeField]
+    private GameObject onEventUi , offInGameUi;
     private Event event_ = null;
     
     public void SetValue(Event event_)
@@ -34,6 +36,9 @@ public class EventPanel : MonoBehaviour
         GameManager.Instance.CurrentUser.love -= event_.price;
         event_.replay = true;
         UpdateUI();
+
+        onEventUi.SetActive(true);
+        offInGameUi.SetActive(false);
         TriggerDialogue(event_.eventId);
 
     }
