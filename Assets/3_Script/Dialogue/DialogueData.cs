@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DialogueData : MonoBehaviour
+public class DialogueData : MonoSingleton<DialogueData>
 {
     // 그.. 동윤아.. 그게 맞아...??
     //그게 맞냐고.....
     //ㄱ,ㄱ[그게맞냐고!!!!!!!!!!]
     [SerializeField]
+    private GameObject choicePanel = null;
+    [SerializeField]
     private DialogueGroup dialogueGroup = null;
+    public DialogueGroup CurrentDialogueGroup {get{return dialogueGroup;}}
     public Text nameText;
     public Text dialogueText;
     private Queue<string> sentences;
@@ -19,6 +22,7 @@ public class DialogueData : MonoBehaviour
     }
     public void StartDialogue(int id)
     {
+        choicePanel.SetActive(false);
         dialogueGroup.id = id;
         
         Debug.Log("Starting conversation with " + dialogueGroup.dialogueList[dialogueGroup.id].name);
@@ -36,6 +40,12 @@ public class DialogueData : MonoBehaviour
     {
         if(sentences.Count == 0)
         {
+            if(dialogueGroup.dialogueList[dialogueGroup.id].choiceId[0]!=0)
+            {
+                choicePanel.SetActive(true);
+            }
+            
+            
             EndDialogue();
             return;
         }

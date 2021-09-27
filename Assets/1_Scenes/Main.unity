@@ -358,7 +358,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &122928904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -869,22 +869,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bc8e8c852558f6489946336ca766197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  choicePanel: {fileID: 142743275}
   dialogueGroup:
     id: 0
     dialogueList:
-    - name: "\uC774\uC5EC\uC8FC"
+    - choiceId: 010000000200000003000000
+      name: "\uC774\uC5EC\uC8FC"
       sentences:
       - "\uC5B4 \uC548\uB155 \uD558\uACE0 "
       - "\u3163\u3139\uBBD6\uD558\u3163\u3161\u3141\uC9C0\u314F\uD760\uC790\u3163\uD750"
-    - name: "\uC774\uC5EC\uC8FC"
+    - choiceId: 030000000100000002000000
+      name: A
       sentences:
       - "\u3147\uBBF8;\u3148,\u3147;\u3163\uBBC0\uB9AC;\u3141\uC990;\u3163\uBBC8;\u3163\u3161\u3141\uB984\u3147\u3141\u3148\u3147\u3141\u3148\u3148\u3147\u3141\u3148\u3147\u3141\u3148\u3148\u3147\u3141\u3148\u3147\u3141\u3148\u3147\u3141\u3148\u3147\u3141\u3147"
       - "\u3147\uBBF8;\u3148,\u3147;\u3163\uBBC0\uB9AC;\u3141\uC990;\u3163\uBBC8;\u3163\u3161\u3141\uB984\u3147\u3141\u3148\u3147\u3141\u3148\u3148\u3147\u3141\u3148\u3147\u3141\u3148\u3148\u3147\u3141\u3148\u3147\u3141\u3148\u3147\u3141\u3148\u3147\u3141\u3147"
       - "\u3147\uBBF8;\u3148,\u3147;\u3163\uBBC0\u3141\u3148\u313B\u3148\u313B\u313B\u313B\u3148\u3148\u3147\u3141\u3148\u3147\u3148\u3141\u3147\u3148\u3141\u3147"
-    - name: 
-      sentences: []
-    - name: 
-      sentences: []
+    - choiceId: 020000000300000001000000
+      name: B
+      sentences:
+      - 12312eqdwqdad
+      - wwacawcawdwadawd
+      - dawdawdwadwadawdawd
+      - cwcccccccccccccccccc
+      - aaaaaaaaaaaaaaaaaaa
+      - bbbbbbbbbbbbbbbbbb
+    - choiceId: 010000000200000003000000
+      name: C
+      sentences:
+      - aaaaaaaaaaaaaaaaaa
+      - bbbbbbbbbbbbbb
+      - cccccccccccccc
+      - dddddddddddddddd
   nameText: {fileID: 1960873478}
   dialogueText: {fileID: 1427569349}
 --- !u!1 &190411930
@@ -924,7 +939,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -291}
   m_SizeDelta: {x: 1000, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &190411932
@@ -973,7 +988,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 190411935}
         m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
-        m_MethodName: TriggerDialogue
+        m_MethodName: OnClickTriggerDialogue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1030,7 +1045,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 190411930}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0963ba061d25e1348a5ee25c5f8175a8, type: 3}
+  m_Script: {fileID: 11500000, guid: 64fd01fbd57dea844a7fce2c83450639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &208659486
@@ -2692,7 +2707,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &558842299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3424,6 +3439,7 @@ GameObject:
   - component: {fileID: 1018620621}
   - component: {fileID: 1018620620}
   - component: {fileID: 1018620619}
+  - component: {fileID: 1018620622}
   m_Layer: 5
   m_Name: ChoiceBtn
   m_TagString: Untagged
@@ -3494,7 +3510,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1018620620}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1018620622}
+        m_TargetAssemblyTypeName: DialogueBtn, Assembly-CSharp
+        m_MethodName: OnClickTriggerDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1018620620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3533,6 +3561,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1018620617}
   m_CullTransparentMesh: 1
+--- !u!114 &1018620622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1018620617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dff8418e524aafc4ebab25eac487ee08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  choiceNumber: 0
 --- !u!1 &1040436413
 GameObject:
   m_ObjectHideFlags: 0
@@ -3881,6 +3922,7 @@ GameObject:
   - component: {fileID: 1171209308}
   - component: {fileID: 1171209307}
   - component: {fileID: 1171209306}
+  - component: {fileID: 1171209309}
   m_Layer: 5
   m_Name: ChoiceBtn_1
   m_TagString: Untagged
@@ -3951,7 +3993,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1171209307}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1171209309}
+        m_TargetAssemblyTypeName: DialogueBtn, Assembly-CSharp
+        m_MethodName: OnClickTriggerDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1171209307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3990,6 +4044,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1171209304}
   m_CullTransparentMesh: 1
+--- !u!114 &1171209309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171209304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dff8418e524aafc4ebab25eac487ee08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  choiceNumber: 1
 --- !u!1 &1198017905
 GameObject:
   m_ObjectHideFlags: 0
@@ -4542,6 +4609,7 @@ GameObject:
   - component: {fileID: 1334387266}
   - component: {fileID: 1334387265}
   - component: {fileID: 1334387264}
+  - component: {fileID: 1334387267}
   m_Layer: 5
   m_Name: ChoiceBtn_2
   m_TagString: Untagged
@@ -4612,7 +4680,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1334387265}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1334387267}
+        m_TargetAssemblyTypeName: DialogueBtn, Assembly-CSharp
+        m_MethodName: OnClickTriggerDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1334387265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4651,6 +4731,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1334387262}
   m_CullTransparentMesh: 1
+--- !u!114 &1334387267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334387262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dff8418e524aafc4ebab25eac487ee08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  choiceNumber: 2
 --- !u!1 &1348287038
 GameObject:
   m_ObjectHideFlags: 0
