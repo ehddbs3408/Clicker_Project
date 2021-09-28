@@ -69,6 +69,8 @@ public class DialogueData : MonoSingleton<DialogueData>
     }
     void EndDialogue()
     {
+        GameManager.Instance.CurrentUser.lovePoint+=dialogueGroup.dialogueList[dialogueGroup.id].reward;
+        dialogueGroup.dialogueList[dialogueGroup.id].reward = 0;
         GameManager.Instance.OnOffGameObJect();
         Debug.Log("End of conversation");
     }

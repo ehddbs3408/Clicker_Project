@@ -132,8 +132,9 @@ public class UIManager : MonoBehaviour
     }
     private void RandomDialogue()
     {
-        randomNumber = Random.Range(0,10);
+        randomNumber = Random.Range(1,10);
         StartCoroutine(RandomDialogueWindow());
+        
         StartCoroutine(TypeSentence(randomDialogue.randomDialogue[randomNumber]));
     }
     private IEnumerator RandomDialogueWindow()

@@ -6,6 +6,7 @@ public class Dialogue
 {
     public bool choice;
     public int[] choiceId;
+    public int reward;
     public string name;
     [TextArea(3,10)]
     public string[] sentences;
