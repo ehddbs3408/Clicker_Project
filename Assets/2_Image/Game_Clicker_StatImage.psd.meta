@@ -1,16 +1,49 @@
 fileFormatVersion: 2
-guid: fca9cf8fd88babe4bbf7cabb99b22a39
+guid: 63952f1f104a45c45afd5929b249a575
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7847803827809992261
-    second: Game_Objact_Clicker_0
+      213: 4918371650991778466
+    second: Game_Clicker_StatImage_0
   - first:
-      213: 4031385053662807863
-    second: Game_Objact_Clicker_1
+      213: -919634556754695242
+    second: Game_Clicker_StatImage_1
   - first:
-      213: 1259600733067109386
-    second: Game_Objact_Clicker_2
+      213: 1832708430865583176
+    second: Game_Clicker_StatImage_2
+  - first:
+      213: -8883036682925384180
+    second: Game_Clicker_StatImage_3
+  - first:
+      213: -8097482392042230400
+    second: Game_Clicker_StatImage_4
+  - first:
+      213: -8972329680811464742
+    second: Game_Clicker_StatImage_5
+  - first:
+      213: -6843923516385206756
+    second: Game_Clicker_StatImage_6
+  - first:
+      213: -2672424663641937512
+    second: Game_Clicker_StatImage_7
+  - first:
+      213: 4641541602429788843
+    second: Game_Clicker_StatImage_8
+  - first:
+      213: -3813886942765800247
+    second: Game_Clicker_StatImage_9
+  - first:
+      213: 3857367989656225614
+    second: Game_Clicker_StatImage_10
+  - first:
+      213: 2370866472253534016
+    second: Game_Clicker_StatImage_11
+  - first:
+      213: 8277616418959548137
+    second: Game_Clicker_StatImage_12
+  - first:
+      213: 1656044270847115793
+    second: Game_Clicker_StatImage_13
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -112,7 +145,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Game_Objact_Clicker_0
+      name: Game_Clicker_StatImage_0
       rect:
         serializedVersion: 2
         x: 0
@@ -126,14 +159,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54eb09f700009ec60800000000000000
-      internalID: 7847803827809992261
+      spriteID: 2aa67ba35f0914440800000000000000
+      internalID: 4918371650991778466
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Game_Objact_Clicker_1
+      name: Game_Clicker_StatImage_1
       rect:
         serializedVersion: 2
         x: 256
@@ -147,14 +180,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 737046cd85b52f730800000000000000
-      internalID: 4031385053662807863
+      spriteID: 6bb66793e3dcc33f0800000000000000
+      internalID: -919634556754695242
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Game_Objact_Clicker_2
+      name: Game_Clicker_StatImage_2
       rect:
         serializedVersion: 2
         x: 512
@@ -168,8 +201,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a04694d61300b7110800000000000000
-      internalID: 1259600733067109386
+      spriteID: 84c4b969b961f6910800000000000000
+      internalID: 1832708430865583176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game_Clicker_StatImage_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0ed773833d19b480800000000000000
+      internalID: -8883036682925384180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game_Clicker_StatImage_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08da75faaa6ff9f80800000000000000
+      internalID: -8097482392042230400
       vertices: []
       indices: 
       edges: []

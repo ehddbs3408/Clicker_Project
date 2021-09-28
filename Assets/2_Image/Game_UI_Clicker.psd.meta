@@ -136,10 +136,10 @@ TextureImporter:
       name: Game_UI_Clicker_1
       rect:
         serializedVersion: 2
-        x: 341
-        y: 682.6666
-        width: 341.33334
-        height: 341.33334
+        x: 339
+        y: 683
+        width: 341
+        height: 341
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 100, y: 100, z: 100, w: 100}

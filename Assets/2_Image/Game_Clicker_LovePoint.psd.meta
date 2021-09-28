@@ -1,16 +1,13 @@
 fileFormatVersion: 2
-guid: fca9cf8fd88babe4bbf7cabb99b22a39
+guid: e97fc7c7edc61e04596eea37f0398ee4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7847803827809992261
-    second: Game_Objact_Clicker_0
+      213: -2393439771634622759
+    second: Game_Clicker_LovePoint_0
   - first:
-      213: 4031385053662807863
-    second: Game_Objact_Clicker_1
-  - first:
-      213: 1259600733067109386
-    second: Game_Objact_Clicker_2
+      213: -5316168106271258293
+    second: Game_Clicker_LovePoint_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -112,64 +109,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Game_Objact_Clicker_0
+      name: Game_Clicker_LovePoint_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 768
-        width: 256
-        height: 256
+        x: 63
+        y: 924
+        width: 531
+        height: 37
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 15, y: 1, z: 15, w: 1}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54eb09f700009ec60800000000000000
-      internalID: 7847803827809992261
+      spriteID: 9de1d6c653bc8ced0800000000000000
+      internalID: -2393439771634622759
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Game_Objact_Clicker_1
+      name: Game_Clicker_LovePoint_1
       rect:
         serializedVersion: 2
-        x: 256
-        y: 768
-        width: 256
-        height: 256
+        x: 63
+        y: 815
+        width: 531
+        height: 37
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 15, y: 0, z: 15, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 737046cd85b52f730800000000000000
-      internalID: 4031385053662807863
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Game_Objact_Clicker_2
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 768
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a04694d61300b7110800000000000000
-      internalID: 1259600733067109386
+      spriteID: b49c07b064d2936b0800000000000000
+      internalID: -5316168106271258293
       vertices: []
       indices: 
       edges: []
