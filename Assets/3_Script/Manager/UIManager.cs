@@ -24,10 +24,11 @@ public class UIManager : MonoBehaviour
     private RandomDialogue randomDialogue;
     private List<UpgradePanel> upgradePanelsList = new List<UpgradePanel>();
     private List<EventPanel> eventPanelsList = new List<EventPanel>();
-    private int clickLoveAdd = 0;
+    private int loveAdd = 0;
     private bool isUpPanel = true;
     private bool isTyping = true;
     private int randomNumber;
+
     void Start()
     {
         
@@ -113,7 +114,7 @@ public class UIManager : MonoBehaviour
     }
     public void UpdateLovePanel()
     {
-        loveText.text = string.Format("{0:###,###,###,###0} 호감도",GameManager.Instance.CurrentUser.love);
+        loveText.text = string.Format("{0:###,###,###,###,###,###0}",GameManager.Instance.CurrentUser.love); 
     }
     private int EarnClickLove()
     {
@@ -121,12 +122,13 @@ public class UIManager : MonoBehaviour
         
         foreach(Stat stat in GameManager.Instance.CurrentUser.statList)
         {
-            while(stat.level >= 10*clickLoveAdd)
+            
+            while(stat.level >= 10*loveAdd)
             {
-                clickLoveAdd++;
-                Debug.Log(clickLoveAdd);
+                loveAdd++;
+                Debug.Log(loveAdd);
             }
-            clickLove += stat.eCl * clickLoveAdd * stat.level;
+            clickLove += stat.eCl * loveAdd * stat.level;
         }
         return clickLove;
     }

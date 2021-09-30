@@ -1,60 +1,77 @@
 ﻿{
-    "love": 12,
+    "lovePoint": 0,
+    "love": 129,
     "statList": [
         {
             "name": "매력",
             "imageNumber": 0,
-            "level": 3,
-            "price": 11,
+            "level": 1,
+            "price": 1,
             "ePs": 0,
             "eCl": 1
         },
         {
             "name": "매너",
-            "imageNumber": 0,
+            "imageNumber": 1,
             "level": 0,
-            "price": 10,
-            "ePs": 1,
+            "price": 100,
+            "ePs": 5,
             "eCl": 0
         },
         {
             "name": "유머",
-            "imageNumber": 0,
+            "imageNumber": 2,
             "level": 0,
-            "price": 10,
-            "ePs": 1,
+            "price": 1000,
+            "ePs": 10,
             "eCl": 0
         },
         {
             "name": "멋짐",
-            "imageNumber": 0,
+            "imageNumber": 3,
             "level": 0,
-            "price": 10,
-            "ePs": 1,
+            "price": 10000,
+            "ePs": 20,
+            "eCl": 0
+        },
+        {
+            "name": "유능함",
+            "imageNumber": 4,
+            "level": 0,
+            "price": 100000,
+            "ePs": 100,
             "eCl": 0
         },
         {
             "name": "귀여움",
-            "imageNumber": 0,
+            "imageNumber": 4,
             "level": 0,
-            "price": 10,
-            "ePs": 1,
+            "price": 5000000,
+            "ePs": 500,
+            "eCl": 0
+        },
+        {
+            "name": "섹시",
+            "imageNumber": 4,
+            "level": 0,
+            "price": 50000000,
+            "ePs": 2000,
             "eCl": 0
         }
     ],
     "evevntList": [
         {
-            "name": "우연",
+            "name": "안녕?",
             "imageNumber": 0,
             "price": 1000,
-            "eventId": 1001,
+            "eventId": 0,
             "replay": false
         },
         {
-            "name": "만남",
+            "name": "여주와 함께",
             "imageNumber": 0,
             "price": 1100,
-            "eventId": 2,
+            "eventId": 1,
             "replay": false
         }
     ]

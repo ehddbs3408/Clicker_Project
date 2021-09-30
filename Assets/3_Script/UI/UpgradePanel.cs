@@ -30,7 +30,7 @@ public class UpgradePanel : MonoBehaviour
         statImage.sprite = statSprite[stat.imageNumber];
         statnameText.text = stat.name;
         statlavelText.text = string.Format("Lv.{0}",stat.level);
-        statpriceText.text = string.Format("{0}",stat.price);
+        statpriceText.text = string.Format("{0:###,###,###,###,###,###0}",stat.price);
     }
     public void OnclickPurchase()
     {
@@ -40,11 +40,11 @@ public class UpgradePanel : MonoBehaviour
         statInList.level++;
         if(statInList.eCl==1)
         {
-            statInList.price = (long)(statInList.level*(clickConst1*(statInList.level-1))+clickConst2);
+            statInList.price = (long)(Mathf.Pow(statInList.level-1,2)*(clickConst1*(statInList.level-1))+clickConst2);
         }
         else
         {
-            //statInList.price = (long)(
+            statInList.price = (long)(statInList.price+(statInList.level*(statInList.level-1)*clickConst1)+clickConst2);
         }
         UpdateUI();
         GameManager.Instance.uIManager.UpdateLovePanel();

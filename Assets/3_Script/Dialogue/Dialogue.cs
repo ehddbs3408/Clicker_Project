@@ -4,6 +4,7 @@ using UnityEngine;
 [System.Serializable]
 public class Dialogue
 {
+    public bool next;
     public bool choice;
     public int[] choiceId;
     public int reward;

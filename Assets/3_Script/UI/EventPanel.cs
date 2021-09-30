@@ -16,8 +16,9 @@ public class EventPanel : MonoBehaviour
     [SerializeField]
     private Sprite[] sprites = null; 
     [SerializeField]
-    private GameObject onEventUi , offInGameUi;
+    private GameObject onEventUi , offInGameUi ,onLovePointExplan;
     private Event event_ = null;
+    private bool isLovePointExplan = true;
     
     public void SetValue(Event event_)
     {
@@ -50,6 +51,11 @@ public class EventPanel : MonoBehaviour
         repalyText.text = string.Format("다시 보기");
         event_.price = 0;
         onEventUi.SetActive(true);
+        if(isLovePointExplan)
+        {
+            isLovePointExplan = false;
+            onLovePointExplan.SetActive(true);
+        }
         offInGameUi.SetActive(false);
         TriggerDialogue(event_.eventId);
         UpdateUI();

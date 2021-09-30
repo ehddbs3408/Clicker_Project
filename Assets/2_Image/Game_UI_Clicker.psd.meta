@@ -11,6 +11,15 @@ TextureImporter:
   - first:
       213: -6742679676145495425
     second: Game_UI_Clicker_2
+  - first:
+      213: -4450305843148325202
+    second: Game_UI_Clicker_3
+  - first:
+      213: 2481651401467737095
+    second: Game_UI_Clicker_4
+  - first:
+      213: 885405747050139771
+    second: Game_UI_Clicker_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -120,7 +129,7 @@ TextureImporter:
         width: 341.33334
         height: 341.33334
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 120, y: 120, z: 120, w: 120}
       outline: []
       physicsShape: []
@@ -136,12 +145,12 @@ TextureImporter:
       name: Game_UI_Clicker_1
       rect:
         serializedVersion: 2
-        x: 339
-        y: 683
-        width: 341
-        height: 341
+        x: 341
+        y: 682.6666
+        width: 341.33334
+        height: 341.33334
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 100, y: 100, z: 100, w: 100}
       outline: []
       physicsShape: []
@@ -157,12 +166,12 @@ TextureImporter:
       name: Game_UI_Clicker_2
       rect:
         serializedVersion: 2
-        x: 683
-        y: 683
-        width: 341
-        height: 341
+        x: 682
+        y: 682.6666
+        width: 341.33334
+        height: 341.33334
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 80, y: 80, z: 80, w: 80}
       outline: []
       physicsShape: []
@@ -170,6 +179,69 @@ TextureImporter:
       bones: []
       spriteID: f721a1d0f803d62a0800000000000000
       internalID: -6742679676145495425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game_UI_Clicker_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 341.66666
+        width: 341.33334
+        height: 341.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 100, y: 100, z: 100, w: 100}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eae7c451a665d32c0800000000000000
+      internalID: -4450305843148325202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game_UI_Clicker_4
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 341.66666
+        width: 341.33334
+        height: 341.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 100, y: 100, z: 100, w: 100}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 704b5d02dc8907220800000000000000
+      internalID: 2481651401467737095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game_UI_Clicker_5
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 341.66666
+        width: 341.33334
+        height: 341.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 100, y: 100, z: 100, w: 100}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b70530bf5d7994c00800000000000000
+      internalID: 885405747050139771
       vertices: []
       indices: 
       edges: []

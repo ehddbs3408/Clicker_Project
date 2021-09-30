@@ -17,17 +17,26 @@ public class GameManager : MonoSingleton<GameManager>
     [SerializeField]
     private GameObject onGameObject,offGameObject;
 
+    private int ePsLoveAdd = 0;
     public void EarnLovePerSecond()
     {
+        
         foreach(Stat stat in user.statList)
         {
-            user.love += stat.ePs * stat.level;
+            
+            while(stat.level >= 10*ePsLoveAdd)
+            {
+                ePsLoveAdd++;
+                Debug.Log(ePsLoveAdd);
+            }
+            user.love +=  stat.ePs * stat.level * ePsLoveAdd;
         }
         uIManager.UpdateLovePanel();
     }
     private void Awake() 
     {
-        SAVE_PATH = Application.persistentDataPath + "/Save";
+        //응너바보응나바보둘다바보
+        SAVE_PATH = Application.dataPath + "/Save";
         if(!Directory.Exists(SAVE_PATH))
         {
             Directory.CreateDirectory(SAVE_PATH);
@@ -41,7 +50,7 @@ public class GameManager : MonoSingleton<GameManager>
     }
     private void SaveToJson()
     {   
-        SAVE_PATH = Application.persistentDataPath + "/Save";
+        SAVE_PATH = Application.dataPath  + "/Save";
         if(user == null) return;
         string json = JsonUtility.ToJson(user,true);
         File.WriteAllText(SAVE_PATH + SAVE_FILENAME,json,System.Text.Encoding.UTF8);

@@ -17,6 +17,7 @@ public class DialogueData : MonoSingleton<DialogueData>
     public Text dialogueText;
     public Text[] choiceText;
     private Queue<string> sentences;
+    private bool watiTyping = false;
     void Start()
     {
         sentences = new Queue<string>();
@@ -39,15 +40,22 @@ public class DialogueData : MonoSingleton<DialogueData>
     }
     public void DisplayNextSentence()
     {
+        if(watiTyping)return;
         if(sentences.Count == 0)
         {
             if(dialogueGroup.dialogueList[dialogueGroup.id].choice)
             {
+                
                 choicePanel.SetActive(true);
                 for(int i =0;i<3;i++)
                 {
                     choiceText[i].text = dialogueGroup.dialogueList[dialogueGroup.id].choiceSentences[i];
                 }
+                return;
+            }
+            if(dialogueGroup.dialogueList[dialogueGroup.id].next)
+            {
+                StartDialogue(dialogueGroup.dialogueList[dialogueGroup.id].choiceId[0]);
                 return;
             }
             
@@ -60,12 +68,14 @@ public class DialogueData : MonoSingleton<DialogueData>
     }
     private IEnumerator TypeSentence(string sentence)
     {
+        watiTyping = true;
         dialogueText.text = "";
         foreach(char latter in sentence.ToCharArray())
         {
             dialogueText.text += latter;
             yield return new WaitForSeconds(0.05f);
         }
+        watiTyping = false;
     }
     void EndDialogue()
     {
