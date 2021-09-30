@@ -13,9 +13,20 @@ public class DialogueData : MonoSingleton<DialogueData>
     [SerializeField]
     private DialogueGroup dialogueGroup = null;
     public DialogueGroup CurrentDialogueGroup {get{return dialogueGroup;}}
-    public Text nameText;
-    public Text dialogueText;
-    public Text[] choiceText;
+    [SerializeField]
+    private Text nameText;
+    [SerializeField]
+    private Text dialogueText;
+    [SerializeField]
+    private Text[] choiceText;
+    [SerializeField]
+    private Image backgroundImage;
+    [SerializeField]
+    private Image faceImage;
+    [SerializeField]
+    private Sprite[] backgroundSprite = null;
+    [SerializeField]
+    private Sprite[] faceSprite = null;
     private Queue<string> sentences;
     private bool watiTyping = false;
     void Start()
@@ -31,6 +42,8 @@ public class DialogueData : MonoSingleton<DialogueData>
 
         nameText.text = dialogueGroup.dialogueList[dialogueGroup.id].name;
 
+        backgroundImage.sprite = backgroundSprite[dialogueGroup.dialogueList[dialogueGroup.id].eventBackground];
+        faceImage.sprite = faceSprite[dialogueGroup.dialogueList[dialogueGroup.id].eventFace];
         sentences.Clear();
         foreach(string sentence in dialogueGroup.dialogueList[dialogueGroup.id].sentences)
         {

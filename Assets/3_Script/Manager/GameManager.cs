@@ -16,6 +16,7 @@ public class GameManager : MonoSingleton<GameManager>
     private readonly string SAVE_FILENAME = "/SaveFile.txt";
     [SerializeField]
     private GameObject onGameObject,offGameObject;
+    private bool intro = false;
 
     private int ePsLoveAdd = 0;
     public void EarnLovePerSecond()
@@ -44,7 +45,7 @@ public class GameManager : MonoSingleton<GameManager>
         LoadFromJson();
         uIManager = GetComponent<UIManager>();
         poolManager = FindObjectOfType<PoolManager>();
-
+        
         InvokeRepeating("SaveToJson",1f,60f);
         InvokeRepeating("EarnLovePerSecond",0f,1f);
     }

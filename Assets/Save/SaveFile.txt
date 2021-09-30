@@ -1,20 +1,20 @@
 ﻿{
     "lovePoint": 0,
-    "love": 129,
+    "love": 3043,
     "statList": [
         {
             "name": "매력",
             "imageNumber": 0,
-            "level": 1,
-            "price": 1,
+            "level": 10,
+            "price": 734,
             "ePs": 0,
             "eCl": 1
         },
         {
             "name": "매너",
             "imageNumber": 1,
-            "level": 0,
-            "price": 100,
+            "level": 2,
+            "price": 112,
             "ePs": 5,
             "eCl": 0
         },
@@ -63,9 +63,9 @@
         {
             "name": "안녕?",
             "imageNumber": 0,
-            "price": 1000,
+            "price": 0,
             "eventId": 0,
-            "replay": false
+            "replay": true
         },
         {
             "name": "여주와 함께",

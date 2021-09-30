@@ -7,6 +7,8 @@ public class Dialogue
     public bool next;
     public bool choice;
     public int[] choiceId;
+    public int eventBackground;
+    public int eventFace;
     public int reward;
     public string name;
     [TextArea(3,10)]

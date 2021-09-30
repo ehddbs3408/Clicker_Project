@@ -16,10 +16,16 @@ public class EventPanel : MonoBehaviour
     [SerializeField]
     private Sprite[] sprites = null; 
     [SerializeField]
-    private GameObject onEventUi , offInGameUi ,onLovePointExplan;
+    private GameObject onEventUi , offInGameUi ,onLovePointExplan,explanBtn;
     private Event event_ = null;
     private bool isLovePointExplan = true;
     
+    private void Start() {
+        if(event_.replay)
+        {
+            explanBtn.SetActive(true);
+        }
+    }
     public void SetValue(Event event_)
     {
         this.event_ = event_;
