@@ -22,16 +22,19 @@ public class UIManager : MonoBehaviour
     private Text randomDialogueText;
     [SerializeField]
     private RandomDialogue randomDialogue;
+    [SerializeField]
+    private GameObject startPanel,offPanel,introPanel;
     private List<UpgradePanel> upgradePanelsList = new List<UpgradePanel>();
     private List<EventPanel> eventPanelsList = new List<EventPanel>();
     private int loveAdd = 0;
     private bool isUpPanel = true;
     private bool isTyping = true;
     private int randomNumber;
+    private int intro = 0;
 
     void Start()
     {
-        
+        intro = PlayerPrefs.GetInt("Intro",7);
         UpdateLovePanel();
         CreateUpgradePanel();
         CreateEventPanel();
@@ -134,7 +137,15 @@ public class UIManager : MonoBehaviour
     }
     private void RandomDialogue()
     {
+        int lovePointAdd = 0;
+        while(GameManager.Instance.CurrentUser.lovePoint > lovePointAdd)
+        {
+            lovePointAdd++;
+        }
         randomNumber = Random.Range(1,10);
+        randomNumber += lovePointAdd * 10;
+        Debug.Log(randomNumber);
+        
         StartCoroutine(RandomDialogueWindow());
         
         StartCoroutine(TypeSentence(randomDialogue.randomDialogue[randomNumber]));
@@ -156,6 +167,22 @@ public class UIManager : MonoBehaviour
             randomDialogueText.text += latter;
             yield return new WaitForSeconds(0.05f);
         }
+    }
+    public void OnClickStart()
+    {
+        if(intro == 1)
+        {
+            startPanel.SetActive(true);
+            offPanel.SetActive(false);
+            Debug.Log("Game Start");
+            return;
+        }
+        intro = 1;
+        PlayerPrefs.SetInt("Intro",intro);
+        DialogueData.Instance.StartDialogue(0);
+        offPanel.SetActive(false);
+        introPanel.SetActive(true);
+        Debug.Log("Intro Start");
     }
     public void OnClickQuit()
     {

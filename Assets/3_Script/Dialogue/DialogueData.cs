@@ -13,12 +13,9 @@ public class DialogueData : MonoSingleton<DialogueData>
     [SerializeField]
     private DialogueGroup dialogueGroup = null;
     public DialogueGroup CurrentDialogueGroup {get{return dialogueGroup;}}
-    [SerializeField]
-    private Text nameText;
-    [SerializeField]
-    private Text dialogueText;
-    [SerializeField]
-    private Text[] choiceText;
+    public Text nameText;
+    public Text dialogueText;
+    public Text[] choiceText;
     [SerializeField]
     private Image backgroundImage;
     [SerializeField]

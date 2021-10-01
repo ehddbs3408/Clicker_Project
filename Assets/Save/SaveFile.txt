@@ -1,6 +1,6 @@
 ﻿{
     "lovePoint": 0,
-    "love": 3043,
+    "love": 8443,
     "statList": [
         {
             "name": "매력",
