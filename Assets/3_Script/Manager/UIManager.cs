@@ -24,6 +24,8 @@ public class UIManager : MonoBehaviour
     private RandomDialogue randomDialogue;
     [SerializeField]
     private GameObject startPanel,offPanel,introPanel;
+    [SerializeField]
+    private AudioClip clip;
     private List<UpgradePanel> upgradePanelsList = new List<UpgradePanel>();
     private List<EventPanel> eventPanelsList = new List<EventPanel>();
     private int loveAdd = 0;
@@ -70,6 +72,7 @@ public class UIManager : MonoBehaviour
     {
         int i=0;
         GameManager.Instance.CurrentUser.love += EarnClickLove();
+        SoundManager.Instance.SFXPlay("Click",clip);
         UpdateLovePanel();
         if(isTyping)
         RandomDialogue();
@@ -170,8 +173,10 @@ public class UIManager : MonoBehaviour
     }
     public void OnClickStart()
     {
+        SoundManager.Instance.OnBackground(0);
         if(intro == 1)
         {
+            
             startPanel.SetActive(true);
             offPanel.SetActive(false);
             Debug.Log("Game Start");

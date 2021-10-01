@@ -1,20 +1,20 @@
 ﻿{
     "lovePoint": 0,
-    "love": 8443,
+    "love": 1,
     "statList": [
         {
             "name": "매력",
             "imageNumber": 0,
-            "level": 10,
-            "price": 734,
+            "level": 1,
+            "price": 1,
             "ePs": 0,
             "eCl": 1
         },
         {
             "name": "매너",
             "imageNumber": 1,
-            "level": 2,
-            "price": 112,
+            "level": 0,
+            "price": 100,
             "ePs": 5,
             "eCl": 0
         },
@@ -36,7 +36,7 @@
         },
         {
             "name": "유능함",
-            "imageNumber": 4,
+            "imageNumber": 5,
             "level": 0,
             "price": 100000,
             "ePs": 100,
@@ -52,7 +52,7 @@
         },
         {
             "name": "섹시",
-            "imageNumber": 4,
+            "imageNumber": 6,
             "level": 0,
             "price": 50000000,
             "ePs": 2000,
@@ -63,15 +63,15 @@
         {
             "name": "안녕?",
             "imageNumber": 0,
-            "price": 0,
-            "eventId": 0,
-            "replay": true
+            "price": 10000,
+            "eventId": 7,
+            "replay": false
         },
         {
-            "name": "여주와 함께",
+            "name": "스토리가 없어용..",
             "imageNumber": 0,
-            "price": 1100,
-            "eventId": 1,
+            "price": 9999999999,
+            "eventId": 0,
             "replay": false
         }
     ]

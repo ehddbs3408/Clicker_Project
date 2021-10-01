@@ -65,7 +65,7 @@ public class DialogueData : MonoSingleton<DialogueData>
             }
             if(dialogueGroup.dialogueList[dialogueGroup.id].next)
             {
-                StartDialogue(dialogueGroup.dialogueList[dialogueGroup.id].choiceId[0]);
+                StartDialogue(dialogueGroup.id+1);
                 return;
             }
             

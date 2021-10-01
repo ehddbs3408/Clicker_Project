@@ -11,6 +11,9 @@ TextureImporter:
   - first:
       213: 1259600733067109386
     second: Game_Objact_Clicker_2
+  - first:
+      213: 9081667512024445572
+    second: Game_Objact_Clicker_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -170,6 +173,27 @@ TextureImporter:
       bones: []
       spriteID: a04694d61300b7110800000000000000
       internalID: 1259600733067109386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game_Objact_Clicker_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4823c664c70980e70800000000000000
+      internalID: 9081667512024445572
       vertices: []
       indices: 
       edges: []

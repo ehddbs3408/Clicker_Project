@@ -16,8 +16,9 @@ public class GameManager : MonoSingleton<GameManager>
     private readonly string SAVE_FILENAME = "/SaveFile.txt";
     [SerializeField]
     private GameObject onGameObject,offGameObject;
+    [SerializeField]
+    private GameObject quitPanel;
     private bool intro = false;
-
     private int ePsLoveAdd = 0;
     public void EarnLovePerSecond()
     {
@@ -37,7 +38,7 @@ public class GameManager : MonoSingleton<GameManager>
     private void Awake() 
     {
         //응너바보응나바보둘다바보
-        SAVE_PATH = Application.dataPath + "/Save";
+        SAVE_PATH = Application.persistentDataPath + "/Save";
         if(!Directory.Exists(SAVE_PATH))
         {
             Directory.CreateDirectory(SAVE_PATH);
@@ -49,9 +50,15 @@ public class GameManager : MonoSingleton<GameManager>
         InvokeRepeating("SaveToJson",1f,60f);
         InvokeRepeating("EarnLovePerSecond",0f,1f);
     }
+    private void Update() {
+        if(Input.GetKey(KeyCode.Escape))
+        {
+            quitPanel.SetActive(true);
+        }
+    }
     private void SaveToJson()
     {   
-        SAVE_PATH = Application.dataPath  + "/Save";
+        SAVE_PATH = Application.persistentDataPath  + "/Save";
         if(user == null) return;
         string json = JsonUtility.ToJson(user,true);
         File.WriteAllText(SAVE_PATH + SAVE_FILENAME,json,System.Text.Encoding.UTF8);
